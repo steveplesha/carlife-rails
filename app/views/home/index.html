@@ -1,0 +1,40 @@
+<div class="container">
+   <h1>CarLife</h1>
+   <h2>Easily keep track of car maintenance and costs</h2>
+    <div id="main-carousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#main-carousel" data-slide-to="1"></li>
+            <li data-target="#main-carousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <%= image_tag("addcar.png", class:"carousel-image",  alt:"Add a car") %>
+                <div class="carousel-caption">
+                    <h1>Add your cars</h1>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag("cars.png", class:"carousel-image", alt:"Add repairs") %>
+                <div class="carousel-caption">
+                    <h1>Add your repairs</h1>
+                </div>
+            </div>
+            <div class="item">
+                <%= image_tag("repairs.png", class:"carousel-image", alt:"Add repairs") %>
+                <div class="carousel-caption">
+                    <h1>Keep track of what work has been done on your car</h1>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+        <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>

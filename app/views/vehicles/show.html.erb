@@ -1,0 +1,13 @@
+<div class='container center-form'>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %> 
+</p>
+
+<%= image_tag("default-vehicle.png", class: "car-image") %>
+
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>
+</div>

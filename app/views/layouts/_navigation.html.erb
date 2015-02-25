@@ -1,0 +1,72 @@
+<nav class="main-nav">
+    <ul class="nav">
+        <li class="menu-label"><span class="glyphicon glyphicon-menu-hamburger"></span> Menu</li>
+        <li>
+            <%= link_to (root_path) do %>
+                <span>CarLife Home</span>    
+                <i class="nav-image home-icon"></i>
+            <% end %>
+        </li>
+        <% if current_user %>
+           <li>
+            <%= link_to (vehicles_path) do %>
+                <span>Your Cars</span>
+                <i class="nav-image car-icon"></i>
+            <% end %>
+            </li>
+        <% end %>
+        <% if !current_user %>
+        <li>
+            <%= link_to (new_user_session_path) do %>
+                <span>Login</span>
+                <i class="nav-image login-icon"></i>
+            <% end %>
+        </li>
+        <% end %>
+        <% if !current_user %>        
+            <li>
+                <%= link_to (new_user_registration_path) do %>
+                    <span>Register</span>
+                    <i class="nav-image register-icon"></i>
+                <% end %>
+            </li>
+        <% end %>
+        <% if current_user %>        
+            <li>
+                <%= link_to (new_vehicle_path) do %>
+                    <span>Add Car</span>
+                    <i class="nav-image add-car-icon"></i>
+                <% end %>
+            </li>
+        <% end %>
+        <li>
+            <%= link_to (maintenance_show_path) do %>
+                <span>Maintenance</span>
+                <i class="nav-image engine-icon"></i>
+            <% end %>
+        </li>   
+        <% if current_user %>      
+           <li>     
+                <%= link_to (edit_user_registration_path) do %>
+                    <span>Your Profile</span>
+                    <i class="nav-image profile-icon"></i>
+                <% end %>
+            </li>
+        <% end %>
+        <% if current_user %>        
+            <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                    <span>Logout</span>
+                    <i class="nav-image logout-icon"></i>
+                <% end %>
+            </li>
+        <% end %>
+    </ul>
+</nav>
+<div class="pull-right login-state">
+    <% if current_user %>
+        <span>Logged in</span></div>
+    <% else %>
+        <span>Not logged in</span>
+    <% end %>
+</div>

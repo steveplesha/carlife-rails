@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rsvpdemo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CarLife is an app enabling you to track the life of your car to keep it running - oil changes, fluid flushes - and track how much you've spent on your vehicle maintenance. ">
+    <title>CarLife</title>
+    <%= stylesheet_link_tag 'normalize.scss' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+    <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+    <header>
+       <%= render 'layouts/navigation' %>
+    </header>
+    <main>
+        <p class="notice message"><%= notice %></p>
+        <p class="alert message"><%= alert %></p>
+        <div class="content">
+            <%= yield %>
+        </div>
+    </main>
+    <footer>
+        <%= render 'layouts/footer' %>
+    </footer>
 </body>
 </html>

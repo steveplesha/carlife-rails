@@ -1,0 +1,318 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body, html { height: 100%; }
+
+body { font-family: 'Josefin Sans', sans-serif; }
+
+main { 
+    background-image: /* Apply a bit of white filter to bkg image to aid in button text visibility */
+        linear-gradient(
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.3)
+        ),
+        url('highway.png'); 
+    background-size: cover;
+    padding: 100px 0 100px 0; 
+    min-height: 100%;
+    color: rgb(255, 255, 255);
+}
+
+input { font-family: sans-serif; }
+
+h1 { font-size: 2em; }
+
+.main-nav { 
+    background-color: #222; 
+    text-align: center;
+}
+
+.main-nav .nav-image {
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    opacity: 1.0;
+}
+
+.home-icon { background-position: 0 -40px; }
+.selected .home-icon { background-position: -40px -40px; }
+
+.car-icon { background-position: 0 0; }
+.selected .car-icon { background-position: -40px 0; }
+
+.login-icon { background-position: -80px -80px; }
+.selected .login-icon { background-position: -120px -80px; }
+
+.profile-icon { background-position: 0px -160px; }
+.selected .profile-icon { background-position: -40px -160px; }
+
+.logout-icon { background-position: 0 -120px; }
+.selected .logout-icon { background-position: -40px -120px; }
+
+.register-icon { background-position: 0 -80px; }
+.selected .register-icon { background-position: -40px -80px; }
+
+.add-car-icon { background-position: -80px -40px; }
+.selected .add-car-icon { background-position: -120px -40px; }
+
+.engine-icon { background-position: -80px -120px; }
+.selected .engine-icon { background-position: -120px -120px; }
+
+.main-nav ul li { 
+    border-bottom: 1px solid rgb(79, 79, 79); 
+    padding-left: 6px;
+}
+
+.main-nav a { color: #aaa; }
+
+.main-nav li a {
+  display: block;
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  color: #aaaaaa;
+  border-top: 1px #2d2d2d solid;
+}
+
+li { list-style: none; }
+
+.main-nav ul li.menu-label {
+    text-align: left;
+    color: rgb(170, 170, 170);
+    padding-left: 2px;
+}
+
+.main-nav ul .selected { background-color: rgb(170, 170, 170); }
+
+.main-nav ul li a:hover { color: rgb( 0, 0, 0 ); }
+
+.selected span { color: rgb( 0, 0, 0 ); }
+
+.nav>li>a>img { max-width: 100%; }
+
+.animate.ng-enter,
+.animate.ng-leave {
+    -webkit-transition: 1s linear all;
+    transition: 1s linear all;
+    opacity: 0;
+}
+
+.animate.ng-enter.ng-enter.ng-enter-active,
+.animate.ng-leave {
+    opacity: 1;
+}
+
+.center-form {
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    background-color: rgba(27, 27, 27, .5);
+    padding: 20px;    
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.center-form a { color: rgb(255, 255, 255); }
+
+input[type=file] { background-color: rgb( 255, 255, 255 ); }
+
+.carousel {
+    padding-top: 10px;
+    padding-bottom: 50px;
+    background-color: rgba(27, 27, 27, .5);
+}
+
+.carousel-inner>.item {
+    padding-bottom: 60px;
+}
+
+.carousel-image {
+    height: 50%;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.carousel-caption {
+    bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.btn-margin { margin-right: 10px; }
+
+.car-item,
+.repair-item {
+    padding: 19px;
+    margin-bottom: 25px;
+    background-color: rgba(27, 27, 27, .5);
+    border: 1px solid rgb(27, 27, 27);
+    border-radius: 5px;
+    transition: background-color ease-in-out 0.2s;
+}
+
+.car-item:hover,
+.repair-item:hover { 
+    background-color: rgba(27, 27, 27, .7); 
+    transition: background-color ease-in-out 0.2s;
+}
+
+.car-item-title { text-align: center; } 
+
+.dropdown-menu { left: 26%; }
+
+.repair-edit { font-size: 0.65em; }
+
+.car-image {
+    max-width: 100%;
+    height: 200px;
+    box-shadow: 0 0 15px black;
+    margin: 0 auto 10px auto;
+    display: block;
+}
+
+#vehicle_vehicleimage { color: rgb(0, 0, 0); }
+
+.btn-car-item {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba( 0, 0, 0, 0);
+    color: rgb( 255, 255, 255 );
+    transition: all .2s linear;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px 25px;
+    margin-left: 33%;
+}
+
+.btn-car-item:hover,
+.btn-car-item:focus,
+.btn-car-item:active {
+    background-color: rgb( 255, 255, 255 );
+    color: rgb( 0, 0, 0 );
+    border: 1px solid rgb( 0, 0, 0 );
+}
+
+.delete-link {
+    background-color: #F49999;
+}
+
+.delete-button { 
+    margin-top: 15px;
+}
+
+.login-state { 
+    padding-right: 20px; 
+    padding-top: 20px;
+    color: white;
+}
+
+.car-image-preview { 
+    width: 200px;
+    border: 1px solid black;
+}
+    
+.bt-social { 
+    color: rgb( 255, 255, 255 ); 
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.bt-social:hover { color: white; }
+
+.facebook-btn { background-color: rgb(58, 136, 181); }
+.facebook-btn:hover { background-color: rgb(30, 99, 141); }
+
+.google-btn { background-color: rgb(209, 59, 59); }
+.google-btn:hover { background-color: rgb(147, 40, 40); }
+
+.twitter-btn { background-color: rgb(26, 189, 252); }
+.twitter-btn:hover { background-color: rgb(16, 146, 196); }
+
+.github-btn { background-color: rgb(103, 97, 97); }
+.github-btn:hover { background-color: rgb(67, 57, 57); }
+
+.forgot-password { margin-top:10px; }
+
+.message {
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 20%;
+    width: 60%;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+#error_explanation { color: #ed5a5a; }
+
+/*.alert { background-color: #ed5a5a; }
+    
+.info-message { background-color: #5fcf80;; }
+*/
+
+.forgot-password a { color: rgb(255, 255, 255); }
+
+#changeEmail { 
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding-bottom: 20px;
+}
+
+footer {
+    background-color: rgba(26, 26, 26, 1);
+    color: rgb( 255, 255, 255 );   
+    padding: 10px 0 10px 10px;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .main-nav {
+        width: 60px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;        
+        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
+           -moz-transition: width ease-in-out 0.28s, background linear 0.1s;
+        -webkit-transition: width ease-in-out 0.28s, background linear 0.1s;
+             -o-transition: width ease-in-out 0.28s, background linear 0.1s;
+                transition: width ease-in-out 0.28s, background linear 0.1s;
+            -ms-transform: translate(0px, 0);
+           -moz-transform: translate(0px, 0);
+        -webkit-transform: translate3d(0px, 0, 0);
+                transform: translate(0px, 0);
+    }
+    
+    .main-nav ul { width: 200px; }
+        
+    .main-nav .nav-image { background-image: url("icons.png"); }
+    
+    .main-nav li a { 
+        padding-left: 55px; 
+        line-height: 44px;
+    }
+    
+    .expanded .main-nav { width: 200px; }
+    
+    .content {
+        margin-left: 55px;
+        transform: translate(0px, 0px);
+        transition: transform 0.28s ease-in-out 0.0s;
+    }
+    
+    .expanded .content { 
+        transform: translate(150px, 0px);
+        transition: transform 0.28s ease-in-out 0.0s;
+    }
+    
+    .center-form { width: 50%; }
+    
+    footer { padding-left: 183px; }
+}
