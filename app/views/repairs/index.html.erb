@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Repairs for <%= @vehicle.year %> <%= @vehicle.make %> <%= @vehicle.model %></h2>
-    <%= image_tag("default-vehicle.png", class: "car-image-preview") %>
+    <%= image_tag(@vehicle.vehicleimage, class: "car-image-preview") %>
     <h2>Total cost of repairs for this vehicle is <%= @totalcost %></h2>         
 </div>           
 <div class="container-fluid">

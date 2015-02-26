@@ -4,17 +4,12 @@
 
 # Using ready-> due to turbolinks, wasn't working otherwise
 ready = ->    
-    $('.main-nav').mouseenter ->
-        $('body').addClass 'expanded'
+    $('.main-nav').hover ->
+        $('body').toggleClass 'expanded'
         return
-
-    $('.main-nav').mouseleave ->
-        $('body').removeClass 'expanded'
-        return
-
-    $('.show-form').click ->
-        $('.profile-form').removeClass 'hidden'
-        return
+    
+    $('.menu-label').click ->
+        $('ul.nav').toggleClass 'collapsed'
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

@@ -13,7 +13,7 @@ main {
         ),
         url('highway.png'); 
     background-size: cover;
-    padding: 100px 0 100px 0; 
+    padding: 30px 10px;
     min-height: 100%;
     color: rgb(255, 255, 255);
 }
@@ -22,9 +22,22 @@ input { font-family: sans-serif; }
 
 h1 { font-size: 2em; }
 
+ul { padding: 0; }
+
 .main-nav { 
     background-color: #222; 
     text-align: center;
+}
+
+.collapsed .main-nav-toggle {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s;
+}
+
+.main-nav-toggle {
+    height: 144px;
+    transition: height 0.2s;
 }
 
 .main-nav .nav-image {
@@ -81,9 +94,10 @@ h1 { font-size: 2em; }
 li { list-style: none; }
 
 .main-nav ul li.menu-label {
-    text-align: left;
+    text-align: center;
     color: rgb(170, 170, 170);
-    padding-left: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .main-nav ul .selected { background-color: rgb(170, 170, 170); }
@@ -119,6 +133,8 @@ li { list-style: none; }
 .center-form a { color: rgb(255, 255, 255); }
 
 input[type=file] { background-color: rgb( 255, 255, 255 ); }
+
+.content { text-align: center; }
 
 .carousel {
     padding-top: 10px;
@@ -207,8 +223,8 @@ input[type=file] { background-color: rgb( 255, 255, 255 ); }
 }
 
 .login-state { 
-    padding-right: 20px; 
-    padding-top: 20px;
+    padding-right: 10px; 
+    padding-top: 5px;
     color: white;
 }
 
@@ -251,11 +267,6 @@ input[type=file] { background-color: rgb( 255, 255, 255 ); }
 
 #error_explanation { color: #ed5a5a; }
 
-/*.alert { background-color: #ed5a5a; }
-    
-.info-message { background-color: #5fcf80;; }
-*/
-
 .forgot-password a { color: rgb(255, 255, 255); }
 
 #changeEmail { 
@@ -270,6 +281,7 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
+    main { padding: 100px 50px 100px 0; }
     
     .main-nav {
         width: 60px;
@@ -291,6 +303,11 @@ footer {
     }
     
     .main-nav ul { width: 200px; }
+    
+    .main-nav ul li.menu-label { 
+        text-align: left; 
+        padding-left: px;
+    }
         
     .main-nav .nav-image { background-image: url("icons.png"); }
     
@@ -303,6 +320,7 @@ footer {
     
     .content {
         margin-left: 55px;
+        text-align: initial;
         transform: translate(0px, 0px);
         transition: transform 0.28s ease-in-out 0.0s;
     }
@@ -313,6 +331,11 @@ footer {
     }
     
     .center-form { width: 50%; }
+    
+    .login-state { 
+        padding-right: 20px; 
+        padding-top: 20px;
+    }
     
     footer { padding-left: 183px; }
 }

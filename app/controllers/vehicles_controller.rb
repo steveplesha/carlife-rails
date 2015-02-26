@@ -28,7 +28,7 @@ class VehiclesController < ApplicationController
 
   def update
     @vehicle.update(vehicle_params)
-    respond_with(@vehicle)
+    respond_with(@vehicle, :location => vehicles_path)
   end
 
   def destroy
