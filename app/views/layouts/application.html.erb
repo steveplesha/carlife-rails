@@ -17,8 +17,17 @@
        <%= render 'layouts/navigation' %>
     </header>
     <main>
-        <p class="notice message"><%= notice %></p>
-        <p class="alert message"><%= alert %></p>
+        <% if flash || notice %>
+            <div class="container">
+                <div>
+                    <% if notice %>
+                        <p class="message info-message"><%= notice %></p>
+                    <% elsif alert %>
+                        <p class="message error-message"><%= alert %></p>    
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
         <div class="content">
             <%= yield %>
         </div>

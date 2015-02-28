@@ -23,6 +23,7 @@ class VehiclesController < ApplicationController
   def create
     @vehicle = Vehicle.new(vehicle_params)
     @vehicle.save
+    flash.notice = "Vehicle created succesfully"
     respond_with(@vehicle, :location => vehicles_path)
   end
 
@@ -33,6 +34,7 @@ class VehiclesController < ApplicationController
 
   def destroy
     @vehicle.destroy
+    flash.notice = "Vehicle succesfully removed"
     respond_with(@vehicle)
   end
 

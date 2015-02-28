@@ -24,20 +24,23 @@ h1 { font-size: 2em; }
 
 ul { padding: 0; }
 
+.btn { width: 100%; }
+
 .main-nav { 
     background-color: #222; 
     text-align: center;
 }
 
 .collapsed .main-nav-toggle {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
-    transition: height 0.2s;
+    transition: max-height 0.2s;
 }
 
 .main-nav-toggle {
-    height: 144px;
-    transition: height 0.2s;
+    height:100%;
+    max-height: 144px;
+    transition: max-height 0.2s;
 }
 
 .main-nav .nav-image {
@@ -80,7 +83,7 @@ ul { padding: 0; }
     padding-left: 6px;
 }
 
-.main-nav a { color: #aaa; }
+.main-nav a { color: rgb(170, 170, 170); }
 
 .main-nav li a {
   display: block;
@@ -203,7 +206,7 @@ input[type=file] { background-color: rgb( 255, 255, 255 ); }
     font-weight: bold;
     font-size: 12px;
     padding: 10px 25px;
-    margin-left: 33%;
+    z-index: 1;
 }
 
 .btn-car-item:hover,
@@ -265,7 +268,9 @@ input[type=file] { background-color: rgb( 255, 255, 255 ); }
     padding: 10px 0;
 }
 
-#error_explanation { color: #ed5a5a; }
+.error-message { background-color: #ed5a5a; }
+    
+.info-message { background-color: #5fcf80;; }
 
 .forgot-password a { color: rgb(255, 255, 255); }
 
@@ -282,6 +287,8 @@ footer {
 
 @media screen and (min-width: 768px) {
     main { padding: 100px 50px 100px 0; }
+    
+    .btn { width: initial; }
     
     .main-nav {
         width: 60px;
@@ -336,6 +343,8 @@ footer {
         padding-right: 20px; 
         padding-top: 20px;
     }
+    
+    .btn-car-item { margin-left: 33%; }
     
     footer { padding-left: 183px; }
 }
