@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
   respond_to :html
 
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.where("user_id = ?", current_user.id).all
     respond_with(@vehicles)
   end
 
@@ -22,6 +22,7 @@ class VehiclesController < ApplicationController
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
+    @vehicle.user_id = current_user.id
     @vehicle.save
     flash.notice = "Vehicle created succesfully"
     respond_with(@vehicle, :location => vehicles_path)
