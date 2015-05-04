@@ -6,12 +6,13 @@ body, html { height: 100%; }
 body { font-family: 'Josefin Sans', sans-serif; }
 
 main { 
-    background-image: /* Apply a bit of white filter to bkg image to aid in button text visibility */
-        linear-gradient(
+    background: /* Apply a bit of white filter to bkg image to aid in button text visibility */
+        -webkit-linear-gradient(
             rgba(0, 0, 0, 0.3),
             rgba(0, 0, 0, 0.3)
         ),
         url('highway.png'); 
+		
     background-size: cover;
     padding: 30px 10px;
     min-height: 100%;
